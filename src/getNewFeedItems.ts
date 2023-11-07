@@ -13,6 +13,7 @@ export const getNewFeedItems = async (feedUrl: string) => {
 
     const publishedDate = new Date(pubDate).getTime() / 1000
     const { diffInHours } = timeDifference(publishedDate)
+    console.log(diffInHours)
     return diffInHours === 0
   })
 }
