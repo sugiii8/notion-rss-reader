@@ -55,8 +55,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: bundle
-          with:
-            token: ${{ secrets.MY_GITHUB_TOKEN }}
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
 
       - name: Download Bundle
         uses: actions/download-artifact@v2
