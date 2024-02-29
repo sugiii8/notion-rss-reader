@@ -17,6 +17,9 @@ export const addFeedItems = async (
     const { title, link, enclosure, pubDate } = item
     const domain = link?.match(/^https?:\/{2,}(.*?)(?:\/|\?|#|$)/)
 
+    // 日本時間に変換
+    const pubDateFormatted = new Date(pubDate).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
+
     const properties: TODO = {
       Title: {
         title: [
@@ -39,7 +42,7 @@ export const addFeedItems = async (
         rich_text: [
           {
             text: {
-              content: pubDate,
+              content: pubDateFormatted,
             },
           },
         ],
